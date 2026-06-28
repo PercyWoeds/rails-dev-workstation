@@ -168,4 +168,6 @@ main() {
     printf "Por favor, reinicia la terminal o tu sesión para aplicar todos los cambios.\n\n"
 }
 
+chmod +x "$HOME/.config/zsh/scripts/"* 2>/dev/null || true
+
 main "$@"
