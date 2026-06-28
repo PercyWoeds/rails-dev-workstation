@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+echo -e "\033[38;5;179m[System Health Check]\033[0m"
+for cmd in git nvim tmux ghostty ruby rails docker fzf mise ollama; do
+  if command -v "$cmd" &>/dev/null; then
+    echo -e " \033[38;5;143m✔\033[0m $cmd: $(which "$cmd")"
+  else
+    echo -e " \033[38;5;167m✘\033[0m $cmd: No configurado en PATH."
+  fi
+done

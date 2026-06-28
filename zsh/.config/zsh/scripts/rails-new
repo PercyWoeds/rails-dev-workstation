@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+PROJECT_NAME="${1:-}"
+if [[ -z "$PROJECT_NAME" ]]; then
+  echo "Uso: rails-new <nombre_del_proyecto>"
+  exit 1
+fi
+echo -e "\033[38;5;109mCreando ecosistema Rails moderno: $PROJECT_NAME\033[0m"
+bundle exec rails new "$PROJECT_NAME" \
+  --database=postgresql \
+  --css=tailwind \
+  --javascript=bun \
+  --skip-jbuilder \
+  --asset-pipeline=propshaft

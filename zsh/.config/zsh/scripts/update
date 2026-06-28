@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+echo -e "\033[38;5;109m[Iniciando Actualización General del Entorno...]\033[0m"
+if command -v paru &>/dev/null; then
+  paru -Syu --noconfirm
+elif command -v yay &>/dev/null; then
+  yay -Syu --noconfirm
+fi
+echo -e "\033[38;5;109mActualizando Plugins de Lazy.nvim...\033[0m"
+nvim --headless "+Lazy! sync" +qa
+echo -e "\033[38;5;143m[Actualización del Sistema y Entorno Completada]\033[0m"

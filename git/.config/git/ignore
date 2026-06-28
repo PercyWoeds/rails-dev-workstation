@@ -1,0 +1,11 @@
+# Global Git Architecture Ignores
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log
+.swp
+.swo
+.ideas/
+.vscode/
+.clwb/

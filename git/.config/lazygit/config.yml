@@ -1,0 +1,42 @@
+# ==============================================================================
+# LazyGit Configuration - Tokyo Night Visual Alignment & Delta Integration
+# ==============================================================================
+
+gui:
+  theme:
+    activeBorderColor:
+      - '#7aa2f7'
+      - 'bold'
+    inactiveBorderColor:
+      - '#414868'
+    searchingActiveBorderColor:
+      - '#ff9e64'
+      - 'bold'
+    optionsTextColor:
+      - '#a9b1d6'
+    selectedLineBgColor:
+      - '#2e3c64'
+    cherryPickedCommitStatusColor:
+      - '#2ac3de'
+    cherryPickedCommitFgColor:
+      - '#7aa2f7'
+    markedBaseCommitStatusColor:
+      - '#e0af68'
+    unstagedChangesColor:
+      - '#f7768e'
+    defaultFgColor:
+      - '#c0caf5'
+  showIcons: true
+  sidePanelWidth: 0.33
+  mainPanelSplitMode: 'vertical'
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
+keybinding:
+  universal:
+    quit: 'q'
+    quit-without-changing-directory: 'Q'
+    togglePanel: '<tab>'

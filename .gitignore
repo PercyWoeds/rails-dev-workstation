@@ -1,0 +1,7 @@
+# Ignorar archivos temporales, logs y respaldos locales generados durante la ejecución
+*.log
+*.tmp
+*.bak
+.DS_Store
+.bak.*/
+install_debug.log

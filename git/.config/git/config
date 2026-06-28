@@ -1,0 +1,50 @@
+# ==============================================================================
+# Git Global Configuration - High Performance Development Settings
+# ==============================================================================
+
+[user]
+  name = Percy
+  email = percy@hidrotransp.com
+
+[core]
+  editor = nvim
+  pager = delta
+  whitespace = fix,cr-at-eol,trailing-space,space-before-tab
+  excludesfile = ~/.config/git/ignore
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = true
+  line-numbers = true
+  theme = TokyoNight
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorWords = true
+  algorithm = histogram
+
+[init]
+  defaultBranch = main
+
+[push]
+  autoSetupRemote = true
+  followTags = true
+
+[alias]
+  st = status -sb
+  co = checkout
+  br = branch
+  cm = commit -m
+  ca = commit --amend --no-edit
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ps = push
+  pl = pull
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
