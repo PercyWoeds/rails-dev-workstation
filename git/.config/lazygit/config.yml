@@ -29,12 +29,10 @@ gui:
   showIcons: true
   sidePanelWidth: 0.33
   mainPanelSplitMode: 'vertical'
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
-
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
 keybinding:
   universal:
     quit: 'q'

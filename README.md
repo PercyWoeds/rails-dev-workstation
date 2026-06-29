@@ -67,23 +67,3 @@ update
 **¿Cómo restauro mis configuraciones de respaldo?** En caso de que el sistema genere un conflicto en el despliegue de Stow, sus archivos originales se almacenarán intactos bajo un directorio estructurado con marca de tiempo dentro de `~/.dotfiles_backups/`. Puede moverlos manualmente de vuelta a sus respectivas ubicaciones en caso de ser necesario.
 
 ```
-
----
-
-### ¿Cómo subes este cambio ahora mismo?
-
-Abre tu terminal en la carpeta del proyecto y ejecuta estos comandos en orden:
-
-```bash
-# 1. Guarda los cambios que acabas de hacer en el archivo README.md
-git add README.md
-
-# 2. Crea el commit documentando el arreglo visual
-git commit -m "docs: use correct backtick line breaks for github block rendering"
-
-# 3. Súbelo a tu rama principal en GitHub
-git push origin main
-
-```
-
-Entra a tu navegador, refresca la página de tu repositorio y verás los bloques perfectamente delimitados con fondo gris oscuro, resaltado de sintaxis de color para Bash y Lua, y el botón de copiado rápido a la derecha.

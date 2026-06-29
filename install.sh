@@ -55,28 +55,33 @@ setup_aur_helper() {
         log_success "yay se ha instalado de forma correcta."
     fi
 }
+# ... dentro de install.sh
+
+
 
 # --- Sincronización e Instalación Base de Paquetes ---
 install_system_packages() {
     log_info "Sincronizando repositorios e instalando dependencias nativas..."
     
-    # Paquetes nativos de repositorio oficial de Arch
+    # Paquetes nativos de repositorio oficial de Arch (Extra/Core)
     local native_packages=(
         git curl wget zsh tmux fzf fd ripgrep bat eza zoxide tree jq 
-        delta btop htop just direnv github-cli docker docker-compose 
+        git-delta btop htop just direnv github-cli docker docker-compose 
         postgresql-libs sqlite unzip zip p7zip imagemagick ffmpeg stow
+        ghostty yazi dust dua-cli mise
     )
 
-    # Paquetes específicos del AUR
-    local aur_packages=(
-        ghostty dust dua-cli yazi-git mise-bin
-    )
+    # Paquetes específicos del AUR (Vacío por ahora, pero listo para el futuro)
+    local aur_packages=()
 
     log_info "Instalando paquetes desde repositorios oficiales..."
     sudo pacman -S --needed --noconfirm "${native_packages[@]}"
 
-    log_info "Instalando paquetes desde el AUR a través de $AUR_HELPER..."
-    $AUR_HELPER -S --needed --noconfirm "${aur_packages[@]}"
+    # Solo ejecuta yay si hay paquetes definidos en el array del AUR
+    if [ ${#aur_packages[@]} -gt 0 ]; then
+        log_info "Instalando paquetes desde el AUR a través de $AUR_HELPER..."
+        $AUR_HELPER -S --needed --noconfirm "${aur_packages[@]}"
+    fi
 }
 
 # --- Gestión de Backups y Enlaces Simbólicos mediante GNU Stow ---
